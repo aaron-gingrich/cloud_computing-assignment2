@@ -16,8 +16,6 @@
 
 <img src="img\cs4843 - a2.png">
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -158,6 +156,27 @@ aws cloudformation create-stack --stack-name <stack-name> --template-body file:/
 ]
 ```
 
+
+## Getting Started
+
+1. Create AWS account
+2. Add User and asign all admin privs
+3. Download AWS CLI
+4. Run aws configure and use the info to the account you created. (Make sure to use us-west-2)
+5. Edit `ci-network-param.json` and run
+```sh
+aws cloudformation create-stack --stack-name <stack-name> --template-body file://ci-network.yml --parameters file://ci-network-param.json
+  ```
+5. Edit `servers-param.json` and run
+ ```
+aws cloudformation create-stack --stack-name <stack-name> --template-body file://servers.yml --parameters file://servers-param.json
+  ```
+6. Create DB Security group in console
+7. Create db subnet
+8. Edit  `database-param.json` and run
+ ```
+aws cloudformation create-stack --stack-name <stack-name> --template-body file://database.yml --parameters file://database-param.json
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
